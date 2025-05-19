@@ -1,26 +1,32 @@
-# Introduction to JavaScript and DOM Manipulation
+function sayHI() {
+    console.log("Hello, World!");
+    console.log("Goodbye world");
+}
 
-## Objectives
+function changeText() {
+    const para = document.getElementById('dynamicText');
+    para.textContent = 'The text content has been changed dynamically!';
+}
 
-Write basic JavaScript functions.
-Manipulate the DOM dynamically.
-Respond to user interactions.
+function changeStyle() {
+    const heading = document.getElementById('mainHeading');
+    heading.style.color = 'red';
+    heading.style.fontSize = '2.5em';
+    heading.style.backgroundColor = 'yellow';
+}
 
-## Instructions
-
-- Create a script.js file and link it to a HTML.
-- Structure the document using DOCTYPE, html, head, and body.
-
->[!NOTE]
->  - Write JavaScript that:
->  - Changes text content dynamically.
->  - Modifies CSS styles via JavaScript.
->  - Adds or removes an element when a button is clicked.
-
-
-# Tasks
-- Create a well-structured HTML5 document.
-- Use at least 5 different HTML elements.
-- Ensure semantic correctness.
-
-Happy Coding! 💻✨
+function toggleElement() {
+    const container = document.getElementById('elementContainer');
+    let existing = document.getElementById('dynamicElement');
+    if (existing) {
+        container.removeChild(existing);
+    } else {
+        const newElem = document.createElement('div');
+        newElem.id = 'dynamicElement';
+        newElem.textContent = 'This element was added dynamically!';
+        newElem.style.padding = '10px';
+        newElem.style.marginTop = '10px';
+        newElem.style.border = '1px solid black';
+        container.appendChild(newElem);
+    }
+}
